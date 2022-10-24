@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --white: #ffffff;
+  --background-gray: #2121210d;
+  --body-text: #464646;
+  --body-background: #f3f3f3;
+  --text-black: #212121;
+  --site-red: #ff2a00;
+  --site-yellow: #fec107;
+  --site-green: #01c853;
+  --site-blue: #2879ff;
+
+  --c-primary-hover: #0b5ed7;
+  --c-secondary-hover: #5c636a;
+  --c-success-hover: #157347;
+  --c-warning-hover: #ffca2c;
+  --c-danger-hover: #bb2d3b;
+  --c-info-hover: #31d2f2;
+  --c-light-hover: #d3d4d5;
+  --c-dark-hover: #424649;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--body-text);
+  background: var(--body-background);
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* bootstrap input remove border on focus */
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active {
+  outline: 0px !important;
+  box-shadow: none !important;
+}
+
+a.link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.link:hover {
+  text-decoration: underline;
+}
