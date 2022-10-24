@@ -5,6 +5,7 @@ import { Button, FieldControl, GradientContainer } from '../common-components';
 import { LOGIN_FORM_VALIDATION_SCHEMA } from '../form-validations';
 import Logo from '../../assets/myalc.png';
 import { useLogin } from '../custom-hooks';
+import { toast } from 'react-toastify';
 
 const StyledCard = styled(Card)`
   max-width: 500px;
@@ -17,12 +18,18 @@ const Login = () => {
     console.log(token);
   };
 
-  const { mutate: login, isLoading } = useLogin({
+  const { mutateAsync: login, isLoading } = useLogin({
     onSuccess: onLoginSuccess,
   });
 
   const handleLogin = (e) => {
-    login(values);
+    login(values)
+      .then((response) => {
+        console.log('response', response);
+      })
+      .catch((error) => {
+        toast.error(error?.response?.data?.message);
+      });
   };
 
   const formik = useFormik({
@@ -40,7 +47,7 @@ const Login = () => {
     <GradientContainer>
       <FormikProvider value={formik}>
         <form onSubmit={handleSubmit}>
-          <StyledCard>
+          <StyledCard className="px-3">
             <Card.Body>
               <div className="d-flex flex-column justify-content-evenly align-items-center mb-3">
                 <img src={Logo} width="300" />

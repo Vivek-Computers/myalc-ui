@@ -1,10 +1,5 @@
-import styled, { keyframes } from "styled-components";
-
-export const NotificationBalloon = styled.sup`
-  background-color: var(--site-red);
-  color: var(--white);
-  width: 5px;
-`;
+import { Badge } from 'react-bootstrap';
+import styled, { keyframes } from 'styled-components';
 
 export const GradientContainer = styled.div`
   width: 100%;
@@ -26,36 +21,36 @@ export const GradientContainer = styled.div`
  * Dot Flashing
  * ==============================================
  */
-const getLoadingColor = (variant = "") => {
-  if (variant.toLowerCase().includes("secondary")) {
-    return "var(--c-secondary-hover)";
+const getLoadingColor = (variant = '') => {
+  if (variant.toLowerCase().includes('secondary')) {
+    return 'var(--c-secondary-hover)';
   }
 
-  if (variant.toLowerCase().includes("success")) {
-    return "var(--c-success-hover)";
+  if (variant.toLowerCase().includes('success')) {
+    return 'var(--c-success-hover)';
   }
 
-  if (variant.toLowerCase().includes("warning")) {
-    return "var(--c-warning-hover)";
+  if (variant.toLowerCase().includes('warning')) {
+    return 'var(--c-warning-hover)';
   }
 
-  if (variant.toLowerCase().includes("danger")) {
-    return "var(--c-danger-hover)";
+  if (variant.toLowerCase().includes('danger')) {
+    return 'var(--c-danger-hover)';
   }
 
-  if (variant.toLowerCase().includes("info")) {
-    return "var(--c-info-hover)";
+  if (variant.toLowerCase().includes('info')) {
+    return 'var(--c-info-hover)';
   }
 
-  if (variant.toLowerCase().includes("light")) {
-    return "var(--c-light-hover)";
+  if (variant.toLowerCase().includes('light')) {
+    return 'var(--c-light-hover)';
   }
 
-  if (variant.toLowerCase().includes("dark")) {
-    return "var(--c-dark-hover)";
+  if (variant.toLowerCase().includes('dark')) {
+    return 'var(--c-dark-hover)';
   }
 
-  return "var(--c-primary-hover)";
+  return 'var(--c-primary-hover)';
 };
 
 const dotFlashingAnimation = (variant) => keyframes`
@@ -81,7 +76,7 @@ const Loading = styled.div`
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     display: inline-block;
     position: absolute;
     top: 0;
@@ -123,7 +118,7 @@ const LoadingContainer = styled.div`
   z-index: 1;
 `;
 
-export const ButtonLoading = ({ variant = "" }) => (
+export const ButtonLoading = ({ variant = '' }) => (
   <LoadingContainer>
     <Loading variant={variant} />
   </LoadingContainer>
